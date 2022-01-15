@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   # CRUD
   # Read
   get '/tasks', to: 'tasks#index'
-  get '/tasks/:id', to: 'tasks#show'
-  # Create
   get '/tasks/new', to: 'tasks#new' # Show form
+  get '/tasks/:id', to: 'tasks#show', as: :task
+  # Create
+
   post '/tasks', to: 'tasks#create'
   # Update
-  get '/tasks/:id/edit', to: 'tasks#edit'
+  get '/tasks/:id/edit', to: 'tasks#edit', as: :task_edit
   patch '/tasks/:id', to: 'tasks#update'
   # Delete
   delete '/tasks/:id', to: 'tasks#destroy'
